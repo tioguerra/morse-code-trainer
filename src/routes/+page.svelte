@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import MorseTree from '$lib/components/MorseTree.svelte';
 	import TelegraphKey from '$lib/components/TelegraphKey.svelte';
 	import { KeyState } from '$lib/morse/key.svelte';
@@ -18,7 +19,7 @@
 		await user.hydrate();
 		settings.hydrate();
 		if (!user.stats.onboarded) {
-			goto('/welcome');
+			goto(`${base}/welcome`);
 			return;
 		}
 		ready = true;
@@ -82,11 +83,11 @@
 			<TelegraphKey state={key} />
 		</div>
 
-		<a href="/session" class="btn btn-primary cta">{t('home.train')}</a>
+		<a href="{base}/session" class="btn btn-primary cta">{t('home.train')}</a>
 
 		<nav class="nav">
-			<a href="/welcome">{t('home.tutorial')}</a>
-			<a href="/settings">{t('home.settings')}</a>
+			<a href="{base}/welcome">{t('home.tutorial')}</a>
+			<a href="{base}/settings">{t('home.settings')}</a>
 		</nav>
 	</main>
 {/if}

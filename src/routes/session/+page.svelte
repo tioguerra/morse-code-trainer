@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { user } from '$lib/stores/user.svelte';
 	import { session } from '$lib/stores/session.svelte';
 	import { settings } from '$lib/stores/settings.svelte';
@@ -17,7 +18,7 @@
 		await user.hydrate();
 		settings.hydrate();
 		if (!user.stats.onboarded) {
-			goto('/welcome');
+			goto(`${base}/welcome`);
 			return;
 		}
 		session.build();
@@ -29,7 +30,7 @@
 	}
 
 	function exit() {
-		goto('/');
+		goto(`${base}/`);
 	}
 
 	const next = $derived.by(() => {

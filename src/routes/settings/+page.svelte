@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { settings } from '$lib/stores/settings.svelte';
 	import { user } from '$lib/stores/user.svelte';
 	import { i18n } from '$lib/i18n/index.svelte';
@@ -22,7 +23,7 @@
 	}
 	async function restartTutorial() {
 		await user.reset();
-		goto('/welcome');
+		goto(`${base}/welcome`);
 	}
 
 	let confirmReset = $state(false);
@@ -38,7 +39,7 @@
 
 <main class="page">
 	<header class="head">
-		<a href="/" class="back" aria-label="back">←</a>
+		<a href="{base}/" class="back" aria-label="back">←</a>
 		<span class="title">{t('settings.title')}</span>
 		<span class="back-spacer"></span>
 	</header>

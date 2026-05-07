@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import TelegraphKey from '$lib/components/TelegraphKey.svelte';
 	import { KeyState } from '$lib/morse/key.svelte';
 	import { cw } from '$lib/audio/cw';
@@ -113,9 +114,9 @@
 		// Use full navigation as a fallback so the user always escapes the tour
 		// even if SvelteKit client routing chokes on something.
 		try {
-			await goto('/');
+			await goto(`${base}/`);
 		} catch {
-			window.location.assign('/');
+			window.location.assign(`${base}/`);
 		}
 	}
 </script>
