@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+	<defs>
+		<linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#fff0b8" />
+			<stop offset="35%" stop-color="#e9c977" />
+			<stop offset="70%" stop-color="#b88a2c" />
+			<stop offset="100%" stop-color="#8a661c" />
+		</linearGradient>
+		<linearGradient id="brass" cx="0.35" cy="0.3" r="0.7">
+			<stop offset="0%" stop-color="#fff1c2" />
+			<stop offset="40%" stop-color="#e9c977" />
+			<stop offset="100%" stop-color="#6e4f15" />
+		</linearGradient>
+	</defs>
+
+	<!-- PCB substrate -->
+	<rect x="0" y="0" width="512" height="512" rx="96" fill="#0b0a08" />
+	<rect x="16" y="16" width="480" height="480" rx="80" fill="none" stroke="#5c440f" stroke-width="3" />
+
+	<!-- Decoded morse pattern at top: D A H = -.. .- .... -->
+	<!-- D: -.. -->
+	<rect x="96" y="92" width="56" height="14" rx="3" fill="url(#gold)" />
+	<circle cx="180" cy="99" r="7" fill="url(#gold)" />
+	<circle cx="208" cy="99" r="7" fill="url(#gold)" />
+
+	<!-- Big DAH text -->
+	<text
+		x="256"
+		y="320"
+		text-anchor="middle"
+		font-family="Space Grotesk, ui-sans-serif, system-ui"
+		font-size="200"
+		font-weight="700"
+		fill="url(#gold)"
+		letter-spacing="12"
+	>DAH</text>
+
+	<!-- bottom mini tree symbol -->
+	<g stroke="url(#gold)" stroke-width="4" fill="none">
+		<line x1="256" y1="370" x2="200" y2="420" />
+		<line x1="256" y1="370" x2="312" y2="420" />
+		<line x1="200" y1="420" x2="170" y2="450" />
+		<line x1="200" y1="420" x2="230" y2="450" />
+		<line x1="312" y1="420" x2="282" y2="450" />
+		<line x1="312" y1="420" x2="342" y2="450" />
+	</g>
+	<g fill="url(#brass)">
+		<circle cx="256" cy="370" r="9" />
+		<circle cx="200" cy="420" r="9" />
+		<circle cx="312" cy="420" r="9" />
+		<circle cx="170" cy="450" r="6" />
+		<circle cx="230" cy="450" r="6" />
+		<circle cx="282" cy="450" r="6" />
+		<circle cx="342" cy="450" r="6" />
+	</g>
+</svg>
